@@ -1,0 +1,12 @@
+{
+  "name": "freeuni-digital-technologies",
+  "version": "1.0.0",
+  "main": " ",
+  "scripts": {
+    "start": "reveal-md --preprocessor notes.js ./lectures -w --disable-auto-open",
+    "export": "reveal-md --static slides"
+  },
+  "repository": " ",
+  "author": "iarigby <marvinzem@gmail.com>",
+  "license": "MIT"
+}
