@@ -45,7 +45,7 @@
 </aside></script></section><section data-markdown><script type="text/template">### რა მოწყობილობები იყენებენ ინტერნეტს?
 ნებისმიერი კომპიუტერი შეიძლება გადაკეთდეს, რომ გამოიყენოს ინტერნეტი.
 
-<aside class="notes"><p>შემიძლია მექანიკური, მაგრამ ციფრულად კონტროლირებადი მოწყობილობა მივამაგრო პატარა კომპიუტერს (ზოგი თითის გულის ზომაა), ჩავწერო ლინუქსი და დავუკავშირო ინტერნეტს. მაგალითად, ნათურის ჩამრთველს მივამაგრო რამე ჩაქუჩივით, და ჩართვა გამორთვა ტელეფონიდან ვაკონტროლო. მაგრამ ასე ყველა მოწყობილობაზე ჩაქუჩები გვექნება მიმაგრებული და ამიტომაცაა მნიშნვნელოვანი მოწყობილობების და სახლების წინასწარ IoT-ready დამზადება.</p>
+<aside class="notes"><p>შემიძლია მექანიკური, მაგრამ ციფრულად კონტროლირებადი მოწყობილობა მივამაგრო პატარა კომპიუტერს (ზოგი usb drive-ის ზომაა), ჩავწერო ლინუქსი და დავუკავშირო ინტერნეტს. მაგალითად, ნათურის ჩამრთველს მივამაგრო რამე ჩაქუჩივით, და ჩართვა გამორთვა ტელეფონიდან ვაკონტროლო. მაგრამ ასე ყველა მოწყობილობაზე ჩაქუჩები გვექნება მიმაგრებული და ამიტომაცაა მნიშნვნელოვანი მოწყობილობების და სახლების წინასწარ IoT-ready დამზადება.</p>
 </aside></script></section></section><section ><section data-markdown><script type="text/template">
 # ისტორია
 </script></section><section data-markdown><script type="text/template">
@@ -61,28 +61,36 @@
 
 - დღეში 8 ბაიტიდან [წამში 100 000](https://www.internetlivestats.com/one-second/) გეგაბაიტამდე
 - 100 000 000 000 000-ჯერ მეტი
+
 <aside class="notes"><p>ანუ დღეს ერთ წამში ას ტრილიონჯერ მეტი მონაცემები გაიგზავნა, ვიდრე ინტერნეტის პირველ დღეს. დღის რიცხვს ჩვენი ტვინი კიდევ უფრო ვერ აღიქვამს (ასევე მაგდენ ნოლიანს რა ქვია, ვერ ვიხსენებ). დღეში კი კიდევ 60x60x24=86,400-ჯერ უფრო მეტი.</p>
 </aside></script></section><section data-markdown><script type="text/template">
 ### წამის მეათედში დედამიწის გარშემო
 ერთი ინტერნეტ პაკეტი პლანეტის ერთი ბოლოდან მეორემდე 10-20 კომპიუტერს გაივლის და ამას 0.1 მილიწამსაც კი არ ანდომებს
+
 <aside class="notes"><p>და მნიშვნელოვანია ისიც, რომ ამ ყველა კომპიუტერს შორის სხვადასხვა კავშირია. ჯერ wifi-თ უკავშირდები შენს როუტერს, რომელიც სახლში დგას. როუტერი უკავშირდება მოდემს, რომელიც ანაწილებს ინტერნეტ კავშირს შენობაში. შეიძლება ქუჩაზე ჯერ ოპტიკური კაბელი არ არის, ანუ რაღაც მომენტში გადაერთვება ერთიდან მეორეზე. თუ ოკეანის გადაღმა გზავნით, თითქმის მთელი ევროპის პაკეტებთან ერთად იგზავნება უზარმაზარი ტრანს ატლანტიკური კაბელით.</p>
 </aside></script></section></section><section ><section data-markdown><script type="text/template">
-# TCP/IP stack
+# TCP/IP stack და ინტერნეტის შრეები
 
 <section data-background-image="https://mocomi.com/wp-content/uploads/2016/10/MOC_GIFO_INTERNET1.gif"></section>
-</script></section><section data-markdown><script type="text/template"></script></section><section data-markdown><script type="text/template"># TCP
+</script></section><section data-markdown><script type="text/template"></script></section><section data-markdown><script type="text/template">
+
+## TCP
 - ინფორმაციის მიმოცვლამდე კომპიუტერები ამოწმებენ კავშირს
 - თითოეული ინტერნეტ პაკეტის გაგზავნის შემდეგ ელოდები დასტურს (ასევე ინტერნეტ პაკეტად გამოგზავნილ მესიჯს). </script></section><section data-markdown><script type="text/template">### რა შემთხვევებში არის ეს პროცედურა ზედმეტი?
 - ვიდეო ზარი - 2 წამის წინანდელი ნათქვამი რაში გვჭირდება?
 - __
+
 <aside class="notes"><p>კავშირის და ყოველი პაკეტის დასტურის გზავნა და ლოდინი დროის მხრივ ძვირი ოპერაციებია და ყოველთვის არ ღირს.</p>
-</aside></script></section><section data-markdown><script type="text/template"># UDP
+</aside></script></section><section data-markdown><script type="text/template">## UDP
 ინტერნეტ პაკეტს აგზავნი და წარმატებებს უსურვებ :)
+
 <aside class="notes"><p>თუ არ ვამოწმებთ მივიდა თუ არა, აბა საიდან იგებენ აპლიკაციები, რომ ცუდი კავშირი გვაქვს?</p>
 </aside></script></section><section data-markdown><script type="text/template">### მაგალითი: Skype
 - UDP ზარისთვის
 - TCP კავშირის ხარისხისთვის
+
 <aside class="notes"><p>სკაიპის ზარის დროს რეალურად ორი კავშირია - ერთი UDP, ზარისა და ხმისთვის, ხოლო მეორე TCP - რომელიც პერიოდულად ამოწმებს კავშირის ხარისხს</p>
+<p>გაიხსენეთ, რომ დასაწყისში სკაიპში მესიჯს თუ გააგზავნიდი და ონლაინ არ იყო, მანამ არ მიუვიდოდ, სანამ ორივე არ იქნებოდა ონლაინ</p>
 </aside></script></section><section data-markdown><script type="text/template">
 ## პროტოკოლები და ინტერფეისები
 </script></section><section data-markdown><script type="text/template">## MAC 
@@ -92,12 +100,15 @@ MAC - იდენტობა (პირადი ნომერი)
 </aside></script></section></section><section ><section data-markdown><script type="text/template"># ინტერნეტ აპლიკაციების მოდელები
 
 
-<aside class="notes"><p>ტექნიკურად ჩემს კომპიუტერზე ერთი ბრძანებით შემიძლია სერვერი ჩავრთო</p>
-</aside></script></section><section data-markdown><script type="text/template">## P2P
-distributed networks
+<section data-background-image="https://blog.resilio.com/wp-content/uploads/2018/06/p2p-vs-client-server-architecture-1170x550.jpg"></section>
+
+<aside class="notes"><p>რა არის სერვერი? უბრალოდ კომპიუტერი, რომელიც სხვა კომპიუტერებს &#39;ემსახურება&#39;. ტექნიკურად ჩემს კომპიუტერზე ერთი ბრძანებით შემიძლია სერვერი ჩავრთო</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<aside class="notes"></aside></script></section><section data-markdown><script type="text/template">## P2P and distributed networks
+
 <aside class="notes"><p>დეცენტრალიზაცია კომპიუტერულ მეცნიერებებში ერთ-ერთი ყველაზე მთავარი თემაა.</p>
 </aside></script></section><section data-markdown><script type="text/template">
-### BitTorrent
+### მაგალითი BitTorrent
 
 <aside class="notes"><p>მაგალითად, როდესაც პირველ ლექციაზე ყველა გაგიშვით სტენფორდის ერთი კურსის საიტზე, 150-მდე ადამიანი ერთდროულად ითხოვდა ფაილებს და რაც მე გადმოვიწერე რამდეინმე წუთში, მოვიდა
 წარმოიდგინეთ საფოსტო მანქანა. შეიძლება წერილებს და ამანათებს სწრაფად ანაწილებ, მაგრამ ფურგონში იმ მიმართულებით ადგილი აღარ არის.
@@ -114,12 +125,22 @@ distributed networks
 სწორ დროსა და გარემოებებში ბიტტორენტი ფაილების გაზიარების სტანდარტი გახდებოდა და უფრო კომფორტული &#39;ინტერნეტი&#39; გვექნებოდა. ვისაც გაინტერესებთ, wired-ს <a href="https://www.wired.com/2017/01/the-inside-story-of-bittorrents-bizarre-collapse/">კარგი სტატია</a> აქვს.</p>
 </aside></script></section></section><section ><section data-markdown><script type="text/template"># მომავალი
 
-IoT, 5G</script></section><section data-markdown><script type="text/template">## Internet of things
+IoT, 5G, დეცენტრალიზაცია
 
-<section data-background-image="https://assets.techcircle.in/uploads/article-image/2018/07/images/16014-internet-of-things.gif"></section></script></section><section data-markdown><script type="text/template"></script></section><section data-markdown><script type="text/template">## 5G
-ამდენი მოწყობილობის გამო სტანდარტულ სიხშირეებზე "ადგილი აღარაა"
-<aside class="notes"><p>შემდეგი თაობის კავშირი რადიკალურად განსხვავდება წინებისგან. ახალი პროტოკოლები, მოწყობილობები, გლობალურად შეცვლილი საკოუნიკაციო სისტემა ფილმების სწრაფად გადმოსაწერად არ კეთდება (და არ გაკეთდებოდა). მთავარი მიზეზი,</p>
-</aside></script></section></section></div>
+<aside class="notes"><p>დეცენტრალიზაციის შემდეგ მოგვიანებით, უსაფრთხოების სწავლასთან ერთად ვისწავლით</p>
+</aside></script></section><section data-markdown><script type="text/template">## Internet of things
+
+<section data-background-image="https://assets.techcircle.in/uploads/article-image/2018/07/images/16014-internet-of-things.gif"></section>
+
+<aside class="notes"><section data-background-image="https://www.youtube.com/watch?v=QSIPNhOiMoE"></section></aside></script></section><section data-markdown><script type="text/template"></script></section><section data-markdown><script type="text/template">## 5G
+ამდენი მოწყობილობის გამო სტანდარტულ სიხშირეებზე "ადგილი აღარაა". 
+Notes: შემდეგი თაობის კავშირი რადიკალურად განსხვავდება წინებისგან. ახალი პროტოკოლები, მოწყობილობები, გლობალურად შეცვლილი საკოუნიკაციო სისტემა ფილმების სწრაფად გადმოსაწერად არ კეთდება (და არ გაკეთდებოდა). მთავარი მიზეზი,
+
+## შემდეგი თაობა
+
+5G არის სიჩქარის და მოწყობილობათა რაოდენობის მიზანი და არა რამე კონკრეტული ტექნოლოგია. სწორი იქნება, თუ მას შევხედავთ, როგორც <section data-background-image="https://youtu.be/GEx_d0SjvS0?t=57"></section>
+
+Notes: სხვადასხვა კომპანიები თანხმდებიან იმაზე, თუ რაში შეეჯიბრებიან ერთმანეთს.</script></section></section></div>
     </div>
 
     <script src="./js/reveal.js"></script>
