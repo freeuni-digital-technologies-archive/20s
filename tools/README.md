@@ -1,3 +1,6 @@
+# tools
+used for subject maintenance.
+
 ## dependencies
 All of the projects use typescript and all dependencies are in package.json. 
 
@@ -13,9 +16,7 @@ yarn install
 yarn build
 ```
 
-## tools
-
-List of modules used for subject maintenance.
+## modules
 
 ### Classroom-api
 wrapper for google classroom api with helpful functions [repo](https://github.com/iarigby/classroom-api/)
