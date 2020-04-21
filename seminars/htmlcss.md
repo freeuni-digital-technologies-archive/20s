@@ -33,20 +33,20 @@ title: html and css
 ## შესავალი
 სემინარებზე შექმნილი დოკუმენტები: [1](./firstwebsite1.html), [2](./firstwebsite.html) და [საბოლოო დოკუმენტი](./firstwebsite.html).
 
-##### html საწყისები
+### html საწყისები
 - დოკუმენტის ნაწილები: head, body, meta, title
 - ელემენტარული თეგები: h1, h2, p
 - თეგების ანატომია: ელემენტი, გამხსნელი/დამხურავი ტეგი, კონტენტი
 - ტექსტი: br, em, strong
 - სიები: ul, ol, li
 
-##### css საწყისები
+### css საწყისები
 - style
 - basic selectors, h1, body
 - color: rgb, hex,background-color
 - id, class
 
-##### მეტი HTML თეგი
+### მეტი HTML თეგი
 - სურათები: img, src, alt, width, height
 - ბმულები: a, href, target: blank/self
 - ცხრილები: არ შედის
