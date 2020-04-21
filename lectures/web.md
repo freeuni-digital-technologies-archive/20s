@@ -1,6 +1,6 @@
 ---
 title: web
-theme: white
+theme: white	
 center: true
 separator: \n<!-- s -->\n
 verticalSeparator: \n<!-- v -->\n
@@ -18,47 +18,14 @@ fragments: true
 <!-- n -->
 [შექმნის მოტივაცია](https://webfoundation.org/about/vision/history-of-the-web/)
 
-## მთავარი კომპონენტები
-- HTML
-- URI/URL
-- HTTP
-
 <!-- v -->
 
-### HTML
-ტექსტის ფორმატირების ენა (არა პროგრამული)
-<!-- n -->
-HyperText Markup Language. The markup (formatting) language for the web.
-ფაილი, როგორც ასეთი, არ არსებობს. როდესაც ინტერნეტით მოგდის ინფორმაცია, არის ტექსტი. და ამ ტექსტში პირველი, რასაც ვაკეთებთ, არის დოკუმენტის საწყისის და ბოლოს მონიშვნა
-<!-- v -->
-
-### HTTP
-რესურსების 
-
-თავიდან html ფაილები და მისი შემადგენელი ნაწილები, მაგრამ ახლა ვები უფრო მეტს მოიცავს
-
-<!-- n -->
-Hypertext Transfer Protocol. Allows for the retrieval of linked resources from across the web.
-
-<!-- v -->
-
-### URL/URI - მისამართი
-უნიკალური იდენთიფიკატორი
-
-<!-- n -->
-Uniform Resource Identifier. A kind of “address” that is unique and used to identify to each resource on the web. It is also commonly called a URL.
-
-<img src="./img/uri.png">
-<!-- v -->
-
-
-
-<!-- s -->
-
-## ვინ იყენებს ვებს
+## რისგან შედგება
 - სერვერები
 - კლიენტები
 
+<!-- n -->
+ერთი და იგივე კომპიუტერზე შეიძლება იყოს რამდენიმე სერვერი და კლიენტი. 
 <!-- v -->
 
 ### სერვერი
@@ -66,6 +33,7 @@ Uniform Resource Identifier. A kind of “address” that is unique and used to 
 - ფაილი
 - მესიჯი/ინფორმაცია
 - გენერირებული საიტი
+- პროგრამა, რომელიც საიტს აგენერირებს
 
 <!-- v -->
 
@@ -73,6 +41,52 @@ Uniform Resource Identifier. A kind of “address” that is unique and used to 
 - ბრაუზერი
 - აპლიკაცია
 - სხვა პროგრამა
+
+<!-- s -->
+
+## მთავარი კომპონენტები
+- HTML
+- URI/URL
+- HTTP
+
+<!-- n -->
+ქსელი უკვე დიდი ხანია არსებობდა, მაგრამ ყველა ორ კომპიუტერს შორის პროგრამული კავშირი არ იყო იმდენად მარტივი
+
+<!-- v -->
+
+### HTML
+ტექსტის ფორმატირების ენა (არა პროგრამული)
+<!-- n -->
+HyperText Markup Language. The markup (formatting) language for the web.
+ფაილების ფორმატი (შეეძლოთ ვორდი აერჩიათ)
+<!-- v -->
+
+### HTTP
+რესურსების მიმოცვლის პროტოკოლი (TCP/IP-ის ზედა შრე)
+თავიდან html ფაილები და მისი შემადგენელი ნაწილები, მაგრამ ახლა ვები უფრო მეტს მოიცავს
+
+<!-- n -->
+Hypertext Transfer Protocol. Allows for the retrieval of linked resources from across the web.
+
+
+### HTTP სპეციფიკაცია
+
+- request/response
+- status codes (404)
+- stateless (არაფერი ვიცით წინა კავშირის შესახებ)
+
+
+<!-- v -->
+
+### URL/URI - მისამართი
+უნიკალური იდენთიფიკატორი
+
+<img src="./img/uri.png">
+
+<!-- n -->
+Uniform Resource Identifier. A kind of “address” that is unique and used to identify to each resource on the web. It is also commonly called a URL.
+პორტი: ვირტუალური 'კარები'
+
 
 <!-- s -->
 
