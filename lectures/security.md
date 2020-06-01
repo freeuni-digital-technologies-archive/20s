@@ -3,6 +3,7 @@
 ## encryption
 - show example
 - public key/private key with a student
+
 ### example
 1) encrypt with a passphrase
 2) someone "hears" the passphrase
