@@ -1,5 +1,9 @@
 ## security vs privacy
 
+## tracking
+- show example with google analytics
+- show example with fake website 
+
 ## encryption
 - show example
 - public key/private key with a student
