@@ -1,0 +1,38 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<style>
+			body {
+				width: 60%;
+				margin: auto;
+				padding: 20px;
+			}
+
+			#post_text {
+				width: 100%;
+				height: 60px;
+				padding: 10px;
+			}
+
+			#new_post {
+				float: right;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="post_container">
+			<textarea id="post_text"  placeholder="hey, what's up?"></textarea>
+			<button id="new_post" onclick="newPost()">post</button>
+		</div>
+		<div>
+			my posts
+			<div id="posts">
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="./index.js"></script>
+	</body>
+</html>
