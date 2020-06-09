@@ -4,41 +4,134 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>reveal-md</title>
+    <title>პროგრამების შექმნის პროცესი</title>
     <link rel="stylesheet" href="./css/reveal.css" />
-    <link rel="stylesheet" href="./css/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/theme/white.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/zenburn.css" />
     <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
 
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template">
-# ენებს, ტექნოლოგიებს შორის არჩევა
-## გზა კოდიდან აპლიკაციამდე
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+
+პროგრამების შექმნის პროცესი
+<aside class="notes"><p>დღეს დავიწყებთ საუბარს იმაზე, თუ როგორ იქმნება ზოგადად პროგრამები</p>
+</aside></script></section><section data-markdown><script type="text/template">## ნაბიჯები და ტრადიციული მიდგომა
+
+<aside class="notes"><section data-background-image="https://images.ukdissertations.com/118/0518331.001.jpg"></section></aside></script></section><section data-markdown><script type="text/template"></script></section><section data-markdown><script type="text/template">## ასეთი მოდელის უარყოფითი მხარეები
+
+<aside class="notes"><ul>
+<li>No working software is produced until late during the life cycle.</li>
+<li>High amounts of risk and uncertainty.</li>
+<li>Not a good model for complex and object-oriented projects.</li>
+<li>Poor model for long and ongoing projects.</li>
+<li>Not suitable for the projects where requirements are at a moderate to high risk of changing. So, risk and uncertainty is high with this process model.</li>
+<li>It is difficult to measure progress within stages.</li>
+<li>Cannot accommodate changing requirements.</li>
+<li>Adjusting scope during the life cycle can end a project.</li>
+<li>Integration is done as a &quot;big-bang. at the very end, which doesn&#39;t allow identifying any technological or business bottleneck or challenges early.</li>
+</ul>
+<p>დადებითი მხარეებიც აქვს, <a href="https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm">უფრო ვრცლად ორივეზე</a>.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## პროგრესული მოდელები
+- კორპორატიული სანამ გახდებოდა
+- მცირე გუნდები
+
+<aside class="notes"><p>თუმცა, ეს არ ნიშნავს, რომ მანამდე პროგრესული იდეები არ არსებობდა. ჯერ კიდევ 60-იანებში, როდესაც unix იქმნებოდა, AT&amp;T-ს პროგრამისტები ხშირად იყენებდნენ ღია ოფისს ახალ იდეებზე სასაუბროდ და სპონტანური დეველოპმენტისთვის. ზოგადად, waterfall მიდგომა ეწინააღმდეგება პროგრამისტების და კომპიუტერული მეცნიერების პრაგმატულობას.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+### Unix გუნდის მუშაობის პრინციპები
+
+<aside class="notes"><blockquote>
+<p>The Unix room was, in some ways, ahead of the curve in providing a large open space with tables where people could work or just hang out. It was often noisy, but it made for very effective communication. Everyone had a private office, but everyone spent some time in the communal space, perhaps just for coffee, or to ask a question about how something worked. And when the system was small and the group was compact, it was also the place to hear about new ideas and new programs. </p>
+</blockquote>
+<p><a href="https://www.networkworld.com/article/2168942/in-their-own-words--unix-pioneers-remember-the-good-times.html">სრული სტატია იუნიქსის ისტორიაზე</a></p>
+</aside></script></section><section data-markdown><script type="text/template">## Unix Philosophy
+უნივერსალური best practice
+<aside class="notes"><ol>
+<li>Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new &quot;features&quot;.</li>
+<li>Expect the output of every program to become the input to another, as yet unknown, program. Don&#39;t clutter output with extraneous information. Avoid stringently columnar or binary input formats. Don&#39;t insist on interactive input.</li>
+<li>Design and build software, even operating systems, to be tried early, ideally within weeks. Don&#39;t hesitate to throw away the clumsy parts and rebuild them.</li>
+<li>Use tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you&#39;ve finished using them.</li>
+</ol>
+<p>თუმცა, ეს მიდგომა იყო გამონაკლისი და პრაქტიკაში უკვე განხილული waterfall მოდელი გამოიყენებოდა</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"># Agile
+
+<aside class="notes"><p>ტერმინის პოპულარიზაცია უკავშირდება 2001 წელს <a href="https://agilemanifesto.org/iso/ka/manifesto.html">მანიფესტის</a> გამოქვეყნებას, მაგრამ მანამდეც იყო უკვე დაწყებული.</p>
+</aside></script></section><section data-markdown><script type="text/template">## მთავარი მიზანი
+<aside class="notes"><section data-background-image="https://upload.wikimedia.org/wikipedia/commons/c/c7/Waterfall_Vs_Agile_m%2Cmethod.png"></section></aside></script></section><section data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">## ალტერნატიული მოდელი
+
+<aside class="notes"><ul>
+<li>ჯერ იქმნება ტესტები</li>
+<li>ნებისმიერ დროს უნდა არსებობდეს მუშა პროგრამა</li>
+<li>rubber duck - მეორე ადამიანის მსჯელობაში მარტივად ჩანს ხარვეზი. მეტიც, საკუთარი მსჯელობის ხმამაღლა ლაპარაკშიც კი. (სამსახურში მენტორის გამოცდილება, ამ საგანში კარელის ბაგის მაგალითი) <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Extreme_Programming.svg/640px-Extreme_Programming.svg.png?1591684649299"></section>.</li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"></script></section><section data-markdown><script type="text/template">## scrum
+
+<aside class="notes"><p>მენეჯმენტის ერთ-ერთი მიდგომა.</p>
+<p>A key principle of Scrum is the dual recognition that customers will change their minds about what they want or need (often called requirements volatility[11]) and that there will be unpredictable challenges—for which a predictive or planned approach is not suited.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## scrum roles
+- product owner
+- development team
+- scrum master</script></section><section data-markdown><script type="text/template">
+## scrum practices
+- sprints
+- stand ups
+- retrospectives
+</script></section><section data-markdown><script type="text/template">## kanban
+
+<aside class="notes"><p>The major differences between Scrum and Kanban is that in Scrum work is divided into sprints that last a fixed amount of time, whereas in Kanban the flow of work is continuous.</p>
+</aside></script></section><section data-markdown><script type="text/template">## სხვა Agile პრაქტიკები
+- pair programming
+- unit tests, continuous development
+- continous integration, reproducible builds
+</script></section><section data-markdown><script type="text/template">## ხშირად დაშვებული შეცდომები Agile გამოყენებისას
+
+პრაქტიკების და მიდგომების ერთობლიობა და არა რაიმე კონკრეტული და მკაცრი პროცესი
+
+<aside class="notes"><p>ბიუროკრატიული და მოუქნელი გარემო თუ არ შეიცვალა, შეიძლება უარესიც კი იყოს, რადგან წინა პროცესი, რამდენადაც ცუდი არ უნდა ყოფილიყო, მუშაობდა და ხალხი შეჩვეული იყო.</p>
+</aside></script></section></section><section  data-markdown><script type="text/template">## გზა კოდიდან აპლიკაციამდე
 ### TDD
-
-### git
-
-### CI/CD
+</script></section><section ><section data-markdown><script type="text/template">## Developer tools
+</script></section><section data-markdown><script type="text/template">
+### ენა და ეკოსისტემა
+- კომპაილერი
+- ბიბლიოთეკები
+</script></section><section data-markdown><script type="text/template">### IDE/სამუშაო გარემო
+მნიშვნელოვანია, რომ ინდივიდუალური არჩევანი იყოს
+<aside class="notes"><p>ზოგჯერ არ არის. მაგალითად მეთოდოლოგიების საგანში.
+თქვენ უკვე რამდენიმე გარემო გქონდათ ამ საგანში. ამას რამდენიმე მიზეზი აქვს:
+თითოეული ნაწილისთვის ყველაზე შეაფერისი/ფუნქციური გარემო. მაგალითად, კარელის გარემო ყველანაირად არაკომფორტული იყო, მაგრამ tradeoff იქნებოდა: 1) სხვა 3ნის სწავლა, 2) კიდევ ერთი პროგრამის დაყენება. რაც შეეხება html/cssს</p>
+</aside></script></section><section data-markdown><script type="text/template">### git
+</script></section><section data-markdown><script type="text/template">### CI/CD
 
 ### დოკერი
 
-
+<!--  -->
+# ენებს, ტექნოლოგიებს შორის არჩევა
 ## wordpress მაგალითი
-### php
-- როგორც პროგრამული ენა, კატასტროფაა
+მიუხედავად იმისა, რომ php-ზე არის, ხშირად კარგი გადაწყვეტილებაა მისი გამოყენება. (ვების 30% იყენებს)
+Notes: - როგორც პროგრამული ენა, უამრავი ხარვეზი აქვს რომელსაც ვერსიიდან ვერსიამდე ასწორებენ მაგრამ ფუნდამენტურ დიზაინის შეცდომებს ვერა
 - ისტორიულად სხვა ენები არ იყვენენ იმდენად საიტებზე კონცენტრირებული
 - wordpress შეიქმნა, რის გამოც დე ფაქტო სტანდარტი გახდა
 - wordpressზე ბევრი ფლაიგინი, თუთორიალი არსებობს, გარშემო ბევრმა იცის და დაგეხმარებიან
-- ჩემი მეგობარი ცვლადს გადასცემდა ფუნქციას (რომელსაც მხოლოდ რაღაც უნდა გამოეთვალა) და ეს ცვლადი რიცხვიდან სია ხდებოდა
-- პროგრამისტების პასუხისმგებლობაა კარგი კოდი, მაგრამ 
+- პროგრამისტების პასუხისმგებლობაა კარგი კოდი, მაგრამ ენაც მნიშნველოვნად განსაზღვრავს რამდენად კარგი კოდის დაწერა არის შესაძლებელი
+
+## Javascript მაგალითი
+10 დღეში ჰაკათონზე შექმნილი ენაა რომელიც კიდევ უფრო დაუსრულებელი და ხარვეზიანი იყო
+Notes: - ერთ კონკრეტულ ბრაუზერში გამოიყენეს, რომელიც იყო პოპულარული
+- საიტები ამ ბრაუზერზე იყო გათვლილი, ამიტომ იყენებდნენ javascript-ს
+- თუ გინდოდა ახალი ბრაუზერის გაკეთება, ძველ საიტებს უნდა ემუშავათ
+- ასე ხდებიან დე-ფაქტო სტანდარტები
+- ბოლო წლებია 'რაღაცას დაემსგავსა'. ასევე არსებობს ალტერნატიული ენები
 ### scala, kotlin
 JVM ს იყენებს. ანუ იმავე პროგრამის კოდს გადმოსცემს, რასაც java, და ამის გამო გახდა პოპულარული
 
 
-
-</script></section></div>
+</script></section></section></div>
     </div>
 
     <script src="./js/reveal.js"></script>

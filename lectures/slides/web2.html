@@ -14,8 +14,10 @@
   <body>
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template">
-ვები (ნაწილი 2)
-</script></section><section ><section data-markdown><script type="text/template">
+# ვები (ნაწილი 2)
+
+<aside class="notes"><p>დღეს ვაგრძელებთ იმის სწავლას, თუ როგორ მუშაობს ინტერნეტი და როგორ იყენებენ მას სხვადასხვა საიტები და აპლიკაციები.</p>
+</aside></script></section><section ><section data-markdown><script type="text/template">
 ### ბრაუზერი
 
 <aside class="notes"><p>ყველაზე გავრცელებული კლიენტი</p>
@@ -28,7 +30,7 @@
 <aside class="notes"><p>სახელი: დომეინი
 მისამართი: IP
 სახელის მისამართთან დაკავშირება: dns
-ერთ სერვერზე რომ ყველა შედიოდეს და უზარმაზარ სიაში უწევდეს პროგრამას ძებნა, არ იქნებოდა მოსახერხებელი. ამიტომ dns ალგორითმი არის დისტრიბუცირებული</p>
+ერთ სერვერზე რომ ყველა შედიოდეს და უზარმაზარ სიაში უწევდეს პროგრამას ძებნა, არ იქნებოდა მოსახერხებელი. ამიტომ dns ალგორითმი არის განაწილებული</p>
 </aside></script></section><section data-markdown><script type="text/template">### როგორ ხდება DNS რეზოლუცია
 
 <img src="https://www.cloudflare.com/img/learning/dns/what-is-dns/dns-lookup-diagram.png
@@ -42,27 +44,48 @@
 - ISP
 - ნებისმიერი კომპანია ან ორგანიზაცია
 
-<aside class="notes"><p>არსებობს &quot;თავისუფალი დნს&quot;, შეგიძლია რომელიმე საიტს კომპიუტერის მასშტაბით დაარქვა სახელი.</p>
+<aside class="notes"><p><a href="https://www.quora.com/Who-manages-runs-and-maintains-DNS-servers">მეტი დეტალი</a></p>
+<p>არსებობს &quot;თავისუფალი დნს&quot;, შეგიძლია რომელიმე საიტს კომპიუტერის მასშტაბით დაარქვა სახელი.</p>
+</aside></script></section><section data-markdown><script type="text/template">### დომეინის ყიდვა
+<aside class="notes"><ul>
+<li><a href="https://nic.ge/">ვინ ანაწილებს დომეინებს</a></li>
+<li><a href="https://www.namespace.ge/">ვინ აქირავებს საქართველოში</a></li>
+<li><a href="https://www.namecheap.com/">კარგი საიტი საერთაშორისო დომეინებისთვის</a></li>
+</ul>
 </aside></script></section><section data-markdown><script type="text/template">
 #### DNS არჩევა
 
-DNS პარამეტრების შეცვლა შეიძლება ოპერატიულ სისტემაში, როუტერში ან კონკრეტული კავშირის დროს.
-[მეტი დეტალი](https://www.quora.com/Who-manages-runs-and-maintains-DNS-servers) </script></section></section><section ><section data-markdown><script type="text/template">### ბრაუზერის სხვა ფუქნციები
+DNS პარამეტრების შეცვლა შეიძლება ოპერატიულ სისტემაში, როუტერში ან კონკრეტული კავშირის დროს. 
+
+დნს სერვერის არჩევანს შეიძლება დიდი გავლენა ქონდეს ბრაუზინგზე. მაგალითისთვის ნახეთ [1.1.1.1](https://1.1.1.1/)
+
+<aside class="notes"><blockquote>
+<p>მთლიანი საკითხის <a href="https://www.cloudflare.com/learning/dns/what-is-dns/">კარგი შეჯამება</a></p>
+</blockquote>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">### ბრაუზერის სხვა ფუნქციები
 </script></section><section data-markdown><script type="text/template">### cookies
 
-<aside class="notes"><p><a href="https://www.youtube.com/watch?v=I01XMRo2ES">მეტი ინფორმაცია</a>
-<a href="https://privacy.net/stop-cookies-tracking/">privacy</a></p>
+<aside class="notes"><p>სპეციალური დოკუმენტი, რომელიც საიტს შეუძლია შეინახოს ბრაუზერის მეხსიერებაში, რომ ამ საიტის სხვა გვერდზე გადასვლისას რაიმე ინფორმაცია დაიმახსოვროს (მაგალითად, რომელი ენა აირჩიე, რა დაამატე საყიდლების სიაში). </p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=I01XMRo2ES">უფრო დეტალურად</a></li>
+<li><a href="https://privacy.net/stop-cookies-tracking/">როგორ გამოიყენება cookies თვალთვალისთვის</a></li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template">#### GDPR
+როგორ იყენებენ ჩვენს პირად ინფორმაციას საიტები, აპლიკაციები, [მაცივრები :)](https://66.media.tumblr.com/32a4e9e7601224f418ddcbe32323b860/tumblr_p9aii5eJXo1rman24o1_1280.jpg)
+<aside class="notes"><p>GDPR არის ევროკავშირის კანონპროექტი საკუთარ მონაცემებზე უფლებების &quot;დასაბრუნებლად&quot;.</p>
 </aside></script></section><section data-markdown><script type="text/template">### http/https details
 რამდენად "ნამდვილია" კავშირი
 
-<aside class="notes"><p>ხშირად სხვა სიმბოლოებს იყენებენ (მაგალითად, რუსული a ეფლის საიტზე)</p>
+<aside class="notes"><p>სკემერები ხშირად სხვა სიმბოლოებს იყენებენ (მაგალითად, რუსული a ეფლის საიტზე), რომ მომხმარებელი მოატყუონ და უსაფრთხოებასთან დაკავშირებული ინფორმაცია შეაყვანინო.</p>
 </aside></script></section><section data-markdown><script type="text/template">### security/access controls
 <aside class="notes"><p>რომ, მაგალითად, კონკრეტულ საიტს მხოლოდ მის cookies-ზე ქონდეს კონტროლი. ახლა უკვე არეგულირებს ვიდეო კამერის, მიკროფონის ნებართვებს</p>
 </aside></script></section><section data-markdown><script type="text/template">### კითხვები
 მაგალითად: როგორ ხდება autocomplete ძებნისას?
 
 <aside class="notes"><p>კლავიატურის ყოველ დაჭერაზე გუგლს უგზავნის მოთხოვნას</p>
-</aside></script></section></section></div>
+</aside></script></section><section data-markdown><script type="text/template">## საინტერესო საიტები
+- [გააქრე რეკლამები შენი მთლიანი ქსელიდან](https://pi-hole.net/)
+- [ერთ-ერთი ყველაზე უსაფრთხო ბრაუზერი](https://brave.com/)</script></section></section></div>
     </div>
 
     <script src="./js/reveal.js"></script>
