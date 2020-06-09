@@ -81,13 +81,13 @@ describe(`კომენტარები`, () => {
 	it(`ელემენტები: პოსტს უნდა ქონდეს კომენტარების ელემენტი, რომლის კლასი 
 		არის ${testConfig.commentsContainerId}.
 
-		${commentsContainerId} ელემენტში არსებობს textarea, რომლის კლასი არის 
+		${testConfig.commentsContainerId} ელემენტში არსებობს textarea, რომლის კლასი არის 
 		${testConfig.commentInputId}.
 
-		${commentsContainerId} ელემენტში არსებობს ღილაკი, რომლის
+		${testConfig.commentsContainerId} ელემენტში არსებობს ღილაკი, რომლის
 		კლასი არის ${testConfig.newCommentButton}
 
-		${commentsContainerId} ელემენტში დაპოსტილი კომენტარებისთვის არსებობს div ელემენტი,
+		${testConfig.commentsContainerId} ელემენტში დაპოსტილი კომენტარებისთვის არსებობს div ელემენტი,
 		რომლის კლასი არის ${testConfig.commentsFeed}
 
 		`, (done) => {
