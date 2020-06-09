@@ -47,12 +47,14 @@ class Tester {
 	}
 
 	getCommentsInput() {
-		return this.getPostComments()
-		.querySelector(`textarea.${testConfig.commentInputId}`)
+		try { return this.getPostComments()
+		.querySelector(`textarea.${testConfig.commentInputId}`)}
+		catch (u) { return null }
 	}
 
 	getCommentButton() {
-		return this.getPostComments().querySelector(`button.${testConfig.newCommentButton}`)
+		return this.getPostComments()
+		.querySelector(`button.${testConfig.newCommentButton}`)
 	}
 
 	getLastComment() {
@@ -76,6 +78,8 @@ class Tester {
 
 }
 
+const message = '\n\t\t🡻 🡻 🡻 🡻 🡻 🡻 🡻 \n🡺 🡺 🡺 🡺 '
+const message_after = '  🡸 🡸 🡸 🡸\n\t\t🡹 🡹 🡹 🡹 🡹 🡹 🡹\n'
 describe(`კომენტარები`, () => {
 	const tester = new Tester()
 	it(`ელემენტები: პოსტს უნდა ქონდეს კომენტარების ელემენტი, რომლის კლასი 
@@ -90,14 +94,14 @@ describe(`კომენტარები`, () => {
 		${testConfig.commentsContainerId} ელემენტში დაპოსტილი კომენტარებისთვის არსებობს div ელემენტი,
 		რომლის კლასი არის ${testConfig.commentsFeed}
 
-		`, (done) => {
-			tester.createNewPost()
+		`, () => {
+			return tester.createNewPost()
 			.then((post) => {
-				assert.isNotNull(post)
-				assert.isNotNull(tester.getCommentsInput())
-				assert.isNotNull(tester.getCommentButton())
-				assert.isNotNull(tester.getCommentsFeed())
-				done()
+				console.log(post)
+				expect(post, '\nახალი პოსტი ვერ დაიდო.').to.not.be.a('null')
+				assert.isNotNull(tester.getCommentsInput(), `${message} ${testConfig.commentInputId} არ არსებობს${message_after}`)
+				assert.isNotNull(tester.getCommentButton(), `${message} ${testConfig.newCommentButton} არ არსებობს${message_after}`)
+				assert.isNotNull(tester.getCommentsFeed(), `${message} ${testConfig.commentsFeed} არ არსებობს${message_after}`)	
 			})
 		})
 	
@@ -106,10 +110,9 @@ describe(`კომენტარები`, () => {
 		თითოეული კომენტარისთვის შექმენით ახალი ელემენტი, რომელსაც ექნება კლასი 
 		${testConfig.comment}. აქ შეგიძლიათ სხვადასხვა ელემენტები იყოს. მთავარია, 
 		უშუალოდ კომენტარის ტექსტის div-ს ქონდეს კლასი ${testConfig.commentText}`, (done) => {
-			tester.createNewPost()
-			.then(() => tester.postComment())
+			tester.postComment()
 			.then((res) => {
-				assert.equal(res.typed, res.result)
+				assert.equal(res.typed, res.result, )
 				done()
 			})
 		})

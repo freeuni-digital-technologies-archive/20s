@@ -26,7 +26,7 @@ function getUser() {
 
 function createPost(post) {
 	return `
-		<div id="post-${post.id}" class="container">
+		<div id="post-${post.id}" class="post container">
 			<div class="post_title">
 				${post.user}
 			</div>
