@@ -1,12 +1,11 @@
 # ლექციები
 
-## Table of contents
-
 ### 1. [ინტერნეტი](./internet)
 ### 2. [ვები](./web)
-### 3. [ვები (ნაწილი 2)](./web2)``
+### 3. [ვები (ნაწილი 2)](./web2)
 ### 4. [სერვერები (ბექენდი)](./server)
+### 5. [dev](./dev)
 
 ## WIP
-### 5. [dev](./dev)
-### 6. [security](./security)
+### 6. [security](./security )
+### [topics](./topics)  
