@@ -1,24 +1,25 @@
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="./style.css">
-	</head>
-	<body>
-		<div id="user_container" class="container">
-			<input type="text" id="username" placeholder="what's your name?">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<!-- You can modify lines after this -->
+	<div id="user_container" class="container">
+		<input type="text" id="username" placeholder="what's your name?">
+	</div>
+	<div id="post_container" class="container">
+		<textarea id="post_text"  placeholder="hey, what's up?"></textarea>
+		<button id="new_post" onclick="newPost()">post</button>
+	</div>
+	<div class="container">
+		my posts
+		<div id="posts">
+			
 		</div>
-		<div id="post_container" class="container">
-			<textarea id="post_text"  placeholder="hey, what's up?"></textarea>
-			<button id="new_post" onclick="newPost()">post</button>
-		</div>
-		<div class="container">
-			my posts
-			<div id="posts">
-				
-			</div>
-		</div>
-		
-		<script type="text/javascript" src="./index.js"></script>
-	</body>
+	</div>
+	
+	<script type="text/javascript" src="./index.js"></script>
+</body>
 </html>

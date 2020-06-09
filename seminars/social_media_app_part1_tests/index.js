@@ -1,9 +1,6 @@
 function newPost() {
-	post = {
-		text: getPostText(),
-		user: getUser()
-	}
-	var elem = createPost(post)
+	var text = getPostText()
+	var elem = createPost(text)
 	addNewPost(elem)
 }
 
@@ -12,19 +9,11 @@ function getPostText() {
 	return postInputElement.value
 }
 
-function getUser() {
-	var userNameElement = document.getElementById('username')
-	return userNameElement.value
-}
-
-function createPost(post) {
+function createPost(text) {
 	return `
-		<div class="container post">
-			<div class="post_title">
-				${post.user}
-			</div>
+		<div class="post">
 			<div class="post_text">
-				${post.text}
+				${text}
 			</div>
 		</div>
 	`

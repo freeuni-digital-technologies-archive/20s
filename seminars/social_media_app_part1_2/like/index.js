@@ -1,7 +1,7 @@
 var POSTID = 0
 
 function newPost() {
-	post = {
+	var post = {
 		id: getPostId(),
 		text: getPostText(),
 		user: getUser()
@@ -12,6 +12,9 @@ function newPost() {
 
 function getPostId() {
 	return ++POSTID
+	// იგივეა, რაც
+	// POSTID = POSTID + 1
+	// return POSTID
 }
 
 function getPostText() {
@@ -33,12 +36,12 @@ function createPost(post) {
 			<div class="post_text">
 				${post.text}
 			</div>
-			${createPostLikes()}
+			${createPostLikes(post)}
 		</div>
 	`
 }
 
-function createPostLikes() {
+function createPostLikes(post) {
 	return `
 		<div class="post_likes_container">
 			<div class="post_likes_info">
