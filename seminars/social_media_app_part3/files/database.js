@@ -1,9 +1,8 @@
-class DatabaseConnection {
+class Database {
     constructor(collectionName) {
         this.collectionName = collectionName
             // onConnectedFunctions.push(this..onConnected)
-        backend.on('connected', () => this.onConnected())
-        this.subscribe()
+       
     }
 
     getMessage(functionName) {
@@ -13,12 +12,6 @@ class DatabaseConnection {
         `
     }
 
-    onConnected() {
-        console.log(`
-            connected to backend.
-            ${this.getMessage('onConnected')}
-        `)
-    }
 
     onNew(obj) {
         console.log(`
@@ -36,7 +29,7 @@ class DatabaseConnection {
 
     onUpdate(obj) {
         console.log(`
-            an object was udpated in ${this.collectionName}. 
+            an object was updated in ${this.collectionName}. 
             ${this.getMessage('onDeleted')}
         `)
     }
@@ -47,28 +40,41 @@ class DatabaseConnection {
      */
     create(obj) {
         const items = this.getAll()
-        const ids = JSON.parse(localStorage.getItem('ids'))
-        const id = ids[this.collectionName] + 1
-        ids[this.collectionName] = id
-        obj.id = id++ 
+        const ids = JSON.parse(localStorage.getItem('ids')) || {}
+        const id = (ids[this.collectionName] || 0)
+        obj.id = id + 1 
+        ids[this.collectionName] = id + 1
         items.push(obj)
         localStorage.setItem('ids', JSON.stringify(ids))
         localStorage.setItem(this.collectionName, JSON.stringify(items))
         this.onNew(obj)
+        return obj
     }
 
+    get(attribute, value) {
+        return this.getAll().find(e => e[attribute] == value)
+    }
+
+    getById(id) {
+        return this.get('id',id)
+    }
+
+    /**
+     * 
+     * @param {number} id of element to delete 
+     */
     delete(id) {
         if (typeof(id) !== "number") {
             return console.error("number is needed as an id ", id, " provided instead")
         }
         const items = this.getAll()
         const newItems = items.filter(e => e.id != id)
-        localStorage.setItem(this.collectionName, JSON.parse(newItems))
-        this.onDelete(id)
+        localStorage.setItem(this.collectionName, JSON.stringify(newItems))
+        // this.onDelete(id)
     }
 
     getAll() {
-        return JSON.parse(localStorage.getItem(this.collectionName))
+        return JSON.parse(localStorage.getItem(this.collectionName)) || []
     }
 
     update(obj) {
@@ -80,22 +86,6 @@ class DatabaseConnection {
         localStorage.setItem(this.collectionName, JSON.stringify(newItems))
         console.log('udpated item ' + obj.id)
 
-    }
-
-    subscribe() {
-        backend.on('connected', () => backend.realtime.subscribe(
-            // TODO needs to be ID of the student
-            'social-media',
-            this.collectionName, {},
-            p => {
-                if (p.action == "create")
-                    this.onNew(this.unwrap(p.result)) //addPost()
-                else if (p.action == "delete")
-                //TODO    
-                    this.onDeleted(p.result._id)
-                else
-                    console.log(p)
-            }))
     }
 
 }

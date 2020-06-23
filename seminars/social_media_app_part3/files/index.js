@@ -1,17 +1,21 @@
-var POSTID = 0
 var COMMENTID = 0
-function newPost() {
-	post = {
-		id: getPostId(),
-		text: getPostText(),
-		user: getUser()
+var posts = new Database('posts')
+
+function displayAllPosts() {
+	for (var post of posts.getAll()) {
+		addNewPost(createPost(post))
 	}
+}
+displayAllPosts()
+
+function newPost() {
+	var post = posts.create({
+		text: getPostText(),
+		user: getUser(),
+		date: new Date(),
+	})
 	var elem = createPost(post)
 	addNewPost(elem)
-}
-
-function getPostId() {
-	return ++POSTID
 }
 
 function getCommentId() {
@@ -36,7 +40,7 @@ function createPost(post) {
 			<div class="post_text">
 				${post.text}
 			</div>
-			${createPostLikes()}
+			${createPostLikes(post)}
 			<div class="comments_container">
 				<textarea class="comment_input_text"></textarea>
 				<button class="new_comment" onclick="newComment(${post.id})">
@@ -74,7 +78,7 @@ function addNewComment(elem, postId) {
 	postComments.insertAdjacentElement('afterbegin', commentContainer)
 }
 
-function createPostLikes() {
+function createPostLikes(post) {
 	return `
 		<div class="post_likes_container">
 			<div class="post_likes_info">
@@ -86,8 +90,17 @@ function createPostLikes() {
 			<button class="post_like_button" onclick="newLike(${post.id})">
 				like
 			</button>
+			<button class="post_like_button" onclick="deletePost(${post.id})">
+				delete
+			</button>
 		</div>
 	`
+}
+
+function deletePost(postId) {
+	var postElem = document.getElementById(`post-${postId}`)
+	postElem.parentNode.removeChild(postElem)
+	posts.delete(postId)
 }
 
 function newLike(postId) {
