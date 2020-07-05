@@ -13,6 +13,8 @@
 
 *zip ფაილში უნდა იყოს მხოლოდ დავალების ფოლდერი. დავალების ფოლდერში უნდა იყოს მხოლოდ html/js/css ფაილები*
 
+> !!! zip და rar არ არის ერთი და იგივე. აუცილებლად *ნახეთ ინსტრუქცია* და ატვირთეთ
+
 ### zip/unzip ინსტრუქცია, თუ აქამდე არ გქონიათ გამოცდილება
 - [windows](https://support.microsoft.com/en-us/help/4028088/windows-zip-and-unzip-files)
 - [mac](https://www.youtube.com/watch?v=nkVrfMfkYdw)
