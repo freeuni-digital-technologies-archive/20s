@@ -1,3 +1,4 @@
+other/
 *.sublime-workspace
 node_modules/
 yarn.lock
@@ -5,3 +6,4 @@ JSKarelForWindows/
 karel.bat
 pall/
 documents/
+final_project.zip
