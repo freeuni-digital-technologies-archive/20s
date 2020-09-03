@@ -56,12 +56,11 @@ config.intro && describe(`შესავალი და თავდაპი�
                 ${testConfig.postsContainerId} ელემენტში დაპოსტილი პოსტებისთვის არსებობს div ელემენტი,
                 რომლის id არის ${testConfig.postsFeed}
 
-                `, (done) => {
+                `, () => {
                     tester.getApp()
                     assert.isNotNull(tester.getPostsInput())
                     assert.isNotNull(tester.getPostButton())
                     assert.isNotNull(tester.getPostsFeed())
-                    done()  
                 })
 
             it(`ამ ღილაკზე დაჭერის შემდეგ პოსტის ველში შეყვანილი ტექსტი უნდა 
@@ -69,10 +68,9 @@ config.intro && describe(`შესავალი და თავდაპი�
                 თითოეული პოსტისთვის შექმენით ახალი ელემენტი, რომელსაც ექნება კლასი 
                 ${testConfig.post}. აქ შეგიძლიათ სხვადასხვა ელემენტები იყოს. მთავარია, 
                 უშუალოდ პოსტის ტექსტის div-ს ქონდეს კლასი ${testConfig.postText}`, (done) => {
-                    tester.postPost()
+                   return  tester.postPost()
                     .then((res) => {
                         assert.equal(res.typed, res.result)
-                        done()
                     })
                 })
         })
@@ -103,22 +101,22 @@ config.posts && describe(`10 ქულა. პოსტები`, () => {
             ${testConfig.postLikesText} ელემენტში უნდა ეწეროს likes, 
             ${testConfig.postLikesCount} ელემენტში 1`, () => {
                 tester.getApp()
-              return tester.postPost('likes count').then(() => {
-                const {likesCount, likesText} = tester.getPostLikes()
-                expect(likesCount.innerText).eql('')
-                expect(likesText.innerText).eql('')
-                return tester.likePost()
-            }).then(() => {
-                const {likesCount, likesText} = tester.getPostLikes()
-                expect(likesCount.innerText).eql('1')
-                expect(likesText.innerText).eql('likes')
+                return tester.postPost('likes count').then(() => {
+                    const {likesCount, likesText} = tester.getPostLikes()
+                    expect(likesCount.innerText).eql('')
+                    expect(likesText.innerText).eql('')
+                    return tester.likePost()
+                }).then(() => {
+                    const {likesCount, likesText} = tester.getPostLikes()
+                    expect(likesCount.innerText).eql('1')
+                    expect(likesText.innerText).eql('likes')
+                })
             })
-        })
     })
 
     describe(`პოსტის მოწონება`, () => {
         it.skip(`ამ ტესტის მუშაობისთვის აუცილებელია უცვლელი იყოს
-         getUser() და setUser() ფუნქცია`)
+           getUser() და setUser() ფუნქცია`)
         it(`2 ქულა. თუ ერთი მომხმარებელი მეორედ დააჭერს მოწონების ღილაკს, 
             მისი მოწონება წაიშლება (ანუ მოწონებების რაოდენობა 
             შემცირდება)`, () => {
@@ -198,11 +196,10 @@ config.comments && describe(`10 ქულა. კომენტარები`
           დაემატოს კომენტარების ფიდში (დაპოსტილი კომენტარები). 
           თითოეული კომენტარისთვის შექმენით ახალი ელემენტი, რომელსაც ექნება კლასი 
           ${testConfig.comment}. აქ შეგიძლიათ სხვადასხვა ელემენტები იყოს. მთავარია, 
-          უშუალოდ კომენტარის ტექსტის div-ს ქონდეს კლასი ${testConfig.commentText}`, (done) => {
-            tester.postComment()
+          უშუალოდ კომენტარის ტექსტის div-ს ქონდეს კლასი ${testConfig.commentText}`, () => {
+            return tester.postComment()
             .then((res) => {
                 assert.equal(res.typed, res.result,)
-                done()
             })
 
         })
@@ -227,13 +224,13 @@ config.comments && describe(`10 ქულა. კომენტარები`
     describe(`კომენტარის წაშლა *`, () => {
         it(`0.5 ქულა. ${testConfig.comment} ელემენტში არსებობს ღილაკი, რომლის
             კლასი არის ${testConfig.commentDeleteButton}`, () => {
-             return tester.postPost().then(postRes => {
+               return tester.postPost().then(postRes => {
                 return tester.postComment('deletecomment')
                 .then(commentRes => {
                     assert.isNotNull(tester.getCommentDeleteButton())
                 })
             })
-         })
+           })
         it(`3 ქულა. ღილაკზე დაჭერის შემდეგ ${testConfig.comment} ელემენტი უნდა წაიშალოს`, () => {
             return tester.deleteComment().then(() => {
                 assert.isNull(tester.getLastCommentElem())
@@ -303,5 +300,5 @@ config.news_feed && describe(`5 ქულა. news feed`, () => {
 })
 
 config.login_register && describe(`15 ქულა. რეგისტრაცია და ავტორიზაცია`, () => {
- it.skip(`იხილეთ login.html და register.html გვერდები`)
+   it.skip(`იხილეთ login.html და register.html გვერდები`)
 })
